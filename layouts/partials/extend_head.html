@@ -17,3 +17,8 @@
   mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
 </style>
 {{- end }}
+
+{{- /* Cloudflare Web Analytics: production builds only, so `hugo server` previews are never counted */ -}}
+{{- if hugo.IsProduction }}
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "49f033d119314c62be664075e5e0d58c"}'></script>
+{{- end }}
