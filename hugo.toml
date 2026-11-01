@@ -1,6 +1,6 @@
 baseURL = 'https://zhangchitc.github.io/'
 locale = 'en-us'
-title = 'zhangchitc'
+title = "Chi's Test Drive"
 theme = 'PaperMod'
 
 enableRobotsTXT = true
@@ -25,7 +25,7 @@ enableRobotsTXT = true
   ShareButtons = ['x', 'linkedin', 'reddit', 'facebook']
 
   [params.homeInfoParams]
-    Title = 'zhangchitc'
+    Title = "Chi's Test Drive"
     Content = 'Notes on how LLMs and coding agents work under the hood.'
 
   [[params.socialIcons]]
