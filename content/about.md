@@ -1,7 +1,7 @@
 ---
 title: "About"
 url: "/about/"
-keywords: ["Chi Zhang", "张司机在路上", "Chi's Test Drive", "Claude Code", "Codex", "LLM"]
+keywords: ["Chi Zhang", "张司机在路上", "Chi's Blog", "Claude Code", "Codex", "LLM"]
 ShowReadingTime: false
 ShowBreadCrumbs: false
 ShowShareButtons: false
@@ -17,10 +17,11 @@ Most of this work first appears as short videos in Chinese, under the name 张�
 
 ## Off the keyboard
 
-- CASI Level 2 snowboard instructor
+- Canadian CASI Level 2 snowboard instructor
 - Licensed sport pilot (fixed-wing aircraft) in China
 - Hiker who has summited Kilimanjaro, Mount Fuji and Mount Kinabalu, Malaysia's highest peak
 - Scuba diver and freediver
+- Foodie who once [documented a week of breakfasts at Airbnb's San Francisco HQ](https://medium.com/@zhangchitc/airbnb-%E4%B8%89%E7%95%AA%E6%80%BB%E9%83%A8%E9%A3%9F%E5%A0%82%E4%B8%80%E5%91%A8%E6%97%A9%E9%A4%90-67774be7e8d5)
 
 ## Get in touch
 
