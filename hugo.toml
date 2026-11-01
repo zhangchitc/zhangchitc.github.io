@@ -11,7 +11,7 @@ enableRobotsTXT = true
 [params]
   env = 'production'
   description = 'Notes on how LLMs and coding agents work under the hood.'
-  author = 'zhangchitc'
+  author = 'Chi Zhang'
   defaultTheme = 'auto'
   ShowReadingTime = true
   ShowPostNavLinks = true

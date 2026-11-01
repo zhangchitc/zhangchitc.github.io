@@ -1,0 +1,21 @@
+{{- /* Overrides PaperMod's post_meta: labelled fields joined by " | ", like lilianweng.github.io
+       e.g. "Date: November 1, 2026  |  Estimated Reading Time: 8 min  |  Author: Chi Zhang" */ -}}
+{{- $meta := slice }}
+
+{{- if not .Date.IsZero -}}
+    {{- $meta = $meta | append (printf "Date: <span title='%s'>%s</span>" (.Date | time.Format "2006-01-02T15:04:05-07:00") (.Date | time.Format (default ":date_long" site.Params.DateFormat))) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+    {{- $meta = $meta | append (printf "Estimated Reading Time: %d min" .ReadingTime) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+    {{- with (partial "author.html" .) }}
+        {{- $meta = $meta | append (printf "Author: %s" .) }}
+    {{- end }}
+{{- end }}
+
+{{- with $meta }}
+    {{- delimit . "&nbsp;&nbsp;|&nbsp;&nbsp;" | safeHTML -}}
+{{- end -}}
