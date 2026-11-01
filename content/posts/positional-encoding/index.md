@@ -193,3 +193,11 @@ The four circles below show the four hands at the same \(pos\). The low pairs sp
 Sound familiar? It's a clock face with a second hand, a minute hand and an hour hand. No single hand tells you the exact time, but together they pin down one unique moment.
 
 Positional encoding works the same way. Each pair of dimensions is a hand, and the position \(pos\) is the time. The wavelengths from the previous section get a new meaning too: a pair's wavelength is how many positions its hand needs to go around once.
+
+## References
+
+[1] Christopher Fleetwood. [“You could have designed state of the art positional encoding.”](https://huggingface.co/blog/zh/designing-positional-encoding) Hugging Face Blog, 2024. (Chinese translation)
+
+[2] Naoki Shibuya. [“Transformer’s Positional Encoding.”](https://naokishibuya.github.io/blog/2021-10-31-transformers-positional-encoding/) 2021.
+
+[3] Vaswani et al. [“Attention Is All You Need.”](https://arxiv.org/abs/1706.03762) NeurIPS 2017.
