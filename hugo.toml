@@ -74,6 +74,11 @@ enableRobotsTXT = true
     name = 'Tags'
     url = '/tags/'
     weight = 30
+  [[menu.main]]
+    identifier = 'about'
+    name = 'About'
+    url = '/about/'
+    weight = 40
 
 # Pass LaTeX through untouched so MathJax renders it in the browser.
 # Single $ is left out on purpose so prices and shell variables never turn into math.
