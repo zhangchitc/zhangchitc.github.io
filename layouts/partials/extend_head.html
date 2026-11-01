@@ -1,0 +1,19 @@
+{{- /* PaperMod hook: load MathJax only on pages that set `math: true` in front matter */ -}}
+{{- if .Params.math }}
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],
+      packages: { '[+]': ['color'] }
+    },
+    loader: { load: ['[tex]/color'] },
+    chtml: { displayOverflow: 'scroll' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+  /* long display formulas scroll sideways on phones instead of overflowing the column */
+  mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+</style>
+{{- end }}

@@ -1,0 +1,62 @@
+baseURL = 'https://zhangchitc.github.io/'
+locale = 'en-us'
+title = 'zhangchitc'
+theme = 'PaperMod'
+
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  env = 'production'
+  description = 'Notes on how LLMs and coding agents work under the hood.'
+  author = 'zhangchitc'
+  defaultTheme = 'auto'
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+
+  [params.homeInfoParams]
+    Title = 'zhangchitc'
+    Content = 'Notes on how LLMs and coding agents work under the hood.'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/zhangchitc'
+
+[menu]
+  [[menu.main]]
+    identifier = 'posts'
+    name = 'Posts'
+    url = '/posts/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'archives'
+    name = 'Archive'
+    url = '/archives/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'tags'
+    name = 'Tags'
+    url = '/tags/'
+    weight = 30
+
+# Pass LaTeX through untouched so MathJax renders it in the browser.
+# Single $ is left out on purpose so prices and shell variables never turn into math.
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
