@@ -131,5 +131,3 @@ In one sentence: the KV cache saves repeated decode work within a request, and t
 2. Sankalp (@dejavucoder). [“How prompt caching works: Paged Attention and Automatic Prefix Caching plus practical tips.”](https://sankalp.bearblog.dev/how-prompt-caching-works/) 2025.
 3. vLLM. [“Automatic Prefix Caching.”](https://docs.vllm.ai/en/stable/design/prefix_caching/) vLLM documentation.
 4. Gim et al. [“Prompt Cache: Modular Attention Reuse for Low-Latency Inference.”](https://arxiv.org/abs/2311.04934) MLSys 2024.
-5. Baseten (@baseten). [“The Baseten Inference Stack.”](https://www.baseten.co/resources/guide/the-baseten-inference-stack/) Baseten guide.
-6. vLLM. [vLLM documentation.](https://docs.vllm.ai/en/stable/)
