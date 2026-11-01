@@ -1,0 +1,19 @@
+{{- /* Overrides PaperMod's social_icons.
+       - `icon` lets an entry borrow another icon (douyin uses PaperMod's tiktok mark, the two share a logo)
+       - layouts/partials/icons/<name>.html supplies icons PaperMod lacks (xiaohongshu) */ -}}
+<div class="social-icons" {{ with .align}}align="{{.}}" {{- end }}>
+    {{- range site.Params.socialIcons }}
+    {{- $icon := .icon | default .name }}
+    <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me"
+        title="{{ .title | default (.name | title) }}">
+        {{- $custom := printf "icons/%s.html" $icon }}
+        {{- if templates.Exists (printf "_partials/%s" $custom) }}
+        {{ partial $custom . }}
+        {{- else if templates.Exists (printf "partials/%s" $custom) }}
+        {{ partial $custom . }}
+        {{- else }}
+        {{ partial "svg.html" (dict "name" $icon) }}
+        {{- end }}
+    </a>
+    {{- end }}
+</div>

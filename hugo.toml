@@ -19,14 +19,44 @@ enableRobotsTXT = true
   ShowCodeCopyButtons = true
   ShowToc = true
   TocOpen = false
+  # share buttons at the end of each post, same set as lilianweng.github.io
+  # (must stay above the [params.*] sub-tables, or TOML files them under the last one)
+  ShowShareButtons = true
+  ShareButtons = ['x', 'linkedin', 'reddit', 'facebook']
 
   [params.homeInfoParams]
     Title = 'zhangchitc'
     Content = 'Notes on how LLMs and coding agents work under the hood.'
 
   [[params.socialIcons]]
+    name = 'x'
+    title = 'X'
+    url = 'https://x.com/zhangchitc'
+  [[params.socialIcons]]
+    name = 'linkedin'
+    title = 'LinkedIn'
+    url = 'https://www.linkedin.com/in/chi-zhang-514a3837/'
+  [[params.socialIcons]]
     name = 'github'
+    title = 'GitHub'
     url = 'https://github.com/zhangchitc'
+  [[params.socialIcons]]
+    name = 'youtube'
+    title = 'YouTube'
+    url = 'https://www.youtube.com/@zhangchitc'
+  [[params.socialIcons]]
+    name = 'xiaohongshu'
+    title = '小红书 Xiaohongshu'
+    url = 'https://www.xiaohongshu.com/user/profile/58859cb882ec3975b07ed4ac'
+  [[params.socialIcons]]
+    name = 'douyin'
+    icon = 'tiktok'
+    title = '抖音 Douyin'
+    url = 'https://www.douyin.com/user/MS4wLjABAAAAT7-Z9A33Rto45bSreupLwUxz5CvGJh2GRnF3JuEDV6Q'
+  [[params.socialIcons]]
+    name = 'rss'
+    title = 'RSS'
+    url = 'index.xml'
 
 [menu]
   [[menu.main]]
