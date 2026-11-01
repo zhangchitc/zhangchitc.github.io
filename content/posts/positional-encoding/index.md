@@ -196,7 +196,7 @@ Positional encoding works the same way. Each pair of dimensions is a hand, and t
 
 ## References
 
-[1] Christopher Fleetwood. [“You could have designed state of the art positional encoding.”](https://huggingface.co/blog/zh/designing-positional-encoding) Hugging Face Blog, 2024. (Chinese translation)
+[1] Christopher Fleetwood. [“You could have designed state of the art positional encoding.”](https://huggingface.co/blog/designing-positional-encoding) Hugging Face Blog, 2024.
 
 [2] Naoki Shibuya. [“Transformer’s Positional Encoding.”](https://naokishibuya.github.io/blog/2021-10-31-transformers-positional-encoding/) 2021.
 
