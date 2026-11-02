@@ -104,4 +104,3 @@ That's about 7.37 billion numbers, or 14.7 billion bytes. The calculator labels 
 1. Vaswani et al. (@ashVaswani). [“Attention Is All You Need.”](https://arxiv.org/abs/1706.03762) NeurIPS 2017.
 2. Ainslie et al. [“GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints.”](https://arxiv.org/abs/2305.13245) EMNLP 2023.
 3. LMCache (@lmcache). [“KV Cache Size Calculator.”](https://docs.lmcache.ai/getting_started/kv_cache_calculator.html) LMCache documentation.
-4. Chi Zhang (@zhangchitc). [“KV Cache vs. Prompt Cache: What's the Difference?”](https://zhangchitc.github.io/posts/kv-cache-vs-prompt-cache/) 2026.
