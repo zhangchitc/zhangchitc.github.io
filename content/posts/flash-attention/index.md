@@ -68,7 +68,13 @@ Why does that work? Softmax is `exp(x)` divided by the sum of all the exponentia
 
 This is the fused kernel we were after. K and V are read from HBM only once, the intermediate values x, o and d don't grow with n so they all stay in SRAM, and only the final o is written to HBM. But it has a fatal flaw: `exp(x)` overflows. x is a dot product of two vectors, so its size is unbounded, while floating-point numbers have a limited range. In FP16, whose largest value is 65,504, \(e^{12}\) is already out of range. So real softmax implementations subtract a baseline m before taking the exponential, a trick called safe softmax. The two are clearly equivalent: it amounts to multiplying the numerator and the denominator by \(e^{-m}\). The usual choice is m = the maximum of all the x values. Then every \(x_i - m\) is at most 0, every \(e^{x_i-m}\) falls between 0 and 1, and the exponential can never overflow.
 
-![Safe softmax multiplies the numerator and denominator by e^(−m), which changes nothing](t5_safe_softmax.png)
+$$
+\begin{aligned}
+\mathrm{softmax}(x_i) &= \dfrac{e^{x_i}}{\sum_{j} e^{x_j}}\\[10pt]
+\text{safe softmax}(x_i) &= \dfrac{\textcolor{#0a7d61}{e^{-m}}\cdot e^{x_i}}{\textcolor{#0a7d61}{e^{-m}}\cdot\sum_{j} e^{x_j}}
+  = \dfrac{e^{x_i\textcolor{#0a7d61}{-m}}}{\sum_{j} e^{x_j\textcolor{#0a7d61}{-m}}}
+\end{aligned}
+$$
 
 ## Online softmax: three passes become two
 
