@@ -5,6 +5,7 @@ tags: ["vllm", "paged-attention", "kv-cache", "prompt-caching", "inference"]
 summary: "Why serving LLMs fragments GPU memory, and how vLLM's PagedAttention fixes it with OS-style paging: physical blocks, a block table, chained block hashes, and a walkthrough of how blocks are allocated, shared, freed and evicted."
 math: true
 ShowToc: true
+images: ["posts/paged-attention/cover_en.png"]
 ---
 
 When I was digging into prompt caching in OpenAI's Codex, I noticed something odd: the number of cached tokens always went up in steps of 512. The reason is that before a prompt reaches the model, it gets cut into blocks of a fixed number of tokens, and both prefix matching and the KV cache work one block at a time.

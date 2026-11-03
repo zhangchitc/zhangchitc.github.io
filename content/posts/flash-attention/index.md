@@ -1,5 +1,5 @@
 ---
-title: "How FlashAttention Works: Same Math, Far Less Data Movement"
+title: "Why FlashAttention is So Fast"
 date: 2026-11-04T01:00:00+08:00
 tags: ["flash-attention", "attention", "gpu", "online-softmax", "inference"]
 summary: "FlashAttention does every multiplication standard attention does, yet runs several times faster. We build it up step by step from the GPU memory hierarchy: kernel fusion, safe softmax, online softmax, and tiling."
@@ -74,7 +74,11 @@ This is the fused kernel we were after. K and V are read from HBM only once, the
 
 Here's a straightforward implementation of safe softmax. It takes three passes. The first finds the row's maximum m. The second subtracts m from each value, takes the exponential and adds it into the denominator d. Only the third divides each term by d to produce the softmax. Here \(d_i\) is the sum of the first i terms, and every term subtracts the same baseline, \(m_N\), the maximum over the entire row. Since \(m_N\) is known only after scanning the whole row, the second pass can't start until the first one finishes.
 
-![Safe softmax in three passes; every term subtracts the global max m_N](t6_safe_softmax.png)
+![Safe softmax in three passes](t6_safe_softmax.png)
+
+$$
+d_i = \sum_{j\le i} e^{\,x_j-m_N}
+$$
 
 Is there a way to avoid all these passes? That's what online softmax does. If the global maximum \(m_N\) is what forces the extra pass, get rid of it. Redefine the denominator: let \(d'_i\) also be the sum of the first i terms, but have each term subtract \(m_i\), the maximum of the first i terms, instead of the global maximum. With that change, \(d'_i\) depends only on the first i terms, so it can be computed while scanning. And the \(d_N\) we ultimately need is the same thing as \(d'_N\), because at i = N the two definitions coincide.
 
@@ -104,6 +108,10 @@ Now let's apply online softmax to attention. That gives the code below, which ne
 ![Attention with online softmax: two passes over K and V](t7_attention_2pass.png)
 
 This version can't overflow, it's code that actually runs, and it needs only two passes compared with three for the naive approach. But can we go further? Look at how \(o_i\) is defined under safe softmax: every term uses the global maximum \(m_N\) and the global denominator \(d_N\). Doesn't that look a lot like \(d_i\) in the previous section? Can we use the same trick, redefining \(o_i\) so its terms no longer depend on the global maximum and the global denominator?
+
+$$
+\boldsymbol{o}_i = \sum_{j\le i}\frac{e^{\,x_j-m_N}}{d_N}\,\boldsymbol{v}_j
+$$
 
 We can. Define \(o'_i\) by replacing \(m_N\) and \(d_N\) with \(m_i\), the maximum of the first i terms, and \(d'_i\), the denominator of the first i terms. Now \(o'_i\) depends only on the first i terms, and the \(o_N\) we ultimately need is the same thing as \(o'_N\).
 
