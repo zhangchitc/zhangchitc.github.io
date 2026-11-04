@@ -28,6 +28,10 @@ enableRobotsTXT = true
     Title = "Chi's Blog"
     Content = 'Notes on how LLMs and coding agents work under the hood.'
 
+  # Google Search Console ownership; keep it, Google re-checks periodically
+  [params.analytics.google]
+    SiteVerificationTag = 'Bo_tlWtMtAZ4ULlJ1ItqFx2v9-485jb6yuKHOk4RCv8'
+
   [[params.socialIcons]]
     name = 'x'
     title = 'X'
