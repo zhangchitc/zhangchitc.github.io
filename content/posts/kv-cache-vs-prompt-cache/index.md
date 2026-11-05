@@ -1,6 +1,6 @@
 ---
 title: "KV Cache vs. Prompt Cache: What's the Difference?"
-date: 2026-11-02T01:00:00+08:00
+date: 2026-05-24T14:53:00+08:00
 tags: ["transformer", "attention", "kv-cache", "prompt-caching", "inference"]
 summary: "A prompt cache doesn't store your last answer. We walk through prefill, decode and attention to see what the KV cache keeps, and how a prompt cache reuses it across requests."
 math: true

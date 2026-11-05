@@ -1,6 +1,6 @@
 ---
 title: "How Much GPU Memory Does the KV Cache Really Take?"
-date: 2026-11-02T17:00:00+08:00
+date: 2026-07-21T15:33:00+08:00
 tags: ["transformer", "attention", "kv-cache", "gqa", "inference"]
 summary: "We build the KV cache size formula one factor at a time, from single-head attention to multi-head, stacked layers and MQA/GQA, then check it against a real calculator: 13.73 GiB for 100,000 tokens on Qwen3-8B."
 math: true

@@ -1,6 +1,6 @@
 ---
 title: "How RoPE Improves on Sinusoidal Positional Encoding"
-date: 2026-11-05T18:00:00+08:00
+date: 2026-09-13T16:34:00+08:00
 tags: ["rope", "positional-encoding", "attention", "transformer"]
 summary: "Sinusoidal encoding has a neat rotation property, but it breaks once the encoding goes through attention's projection matrices. We expand the dot product to see why, then put RoPE through the same expansion and watch the absolute positions cancel out."
 math: true

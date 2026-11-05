@@ -1,6 +1,6 @@
 ---
 title: "How DeepSeek's Multi-Head Latent Attention Works"
-date: 2026-11-05T21:30:00+08:00
+date: 2026-10-27T01:44:00+08:00
 tags: ["deepseek", "mla", "attention", "kv-cache", "rope"]
 summary: "MLA caches one 512-dimensional latent per token instead of 128 heads' worth of keys and values, and matrix absorption means it never has to decompress them. We derive it step by step: joint compression, absorption, why RoPE breaks it, and the decoupled RoPE branch that fixes it."
 math: true

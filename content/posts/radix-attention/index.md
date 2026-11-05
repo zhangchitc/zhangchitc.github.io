@@ -1,6 +1,6 @@
 ---
 title: "RadixAttention: How SGLang Reuses the KV Cache Across Requests"
-date: 2026-11-05T13:00:00+08:00
+date: 2026-09-26T20:12:00+08:00
 tags: ["sglang", "radix-attention", "kv-cache", "prefix-caching", "inference"]
 summary: "SGLang keeps the KV cache in a radix tree: edges hold runs of tokens, nodes hold the GPU slot indices where their KV lives. We walk through the slot pool, TreeNode, inserting and splitting nodes, LRU eviction, and four requests that fill the pool and force an eviction."
 math: false

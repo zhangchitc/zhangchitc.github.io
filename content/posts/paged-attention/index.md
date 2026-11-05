@@ -1,6 +1,6 @@
 ---
 title: "How PagedAttention Works: Paging the KV Cache Like an Operating System"
-date: 2026-11-03T01:00:00+08:00
+date: 2026-08-18T21:09:00+08:00
 tags: ["vllm", "paged-attention", "kv-cache", "prompt-caching", "inference"]
 summary: "Why serving LLMs fragments GPU memory, and how vLLM's PagedAttention fixes it with OS-style paging: physical blocks, a block table, chained block hashes, and a walkthrough of how blocks are allocated, shared, freed and evicted."
 math: true

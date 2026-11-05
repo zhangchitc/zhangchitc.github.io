@@ -1,6 +1,6 @@
 ---
 title: "Why FlashAttention is So Fast"
-date: 2026-11-04T01:00:00+08:00
+date: 2026-08-23T17:09:00+08:00
 tags: ["flash-attention", "attention", "gpu", "online-softmax", "inference"]
 summary: "FlashAttention does every multiplication standard attention does, yet runs several times faster. We build it up step by step from the GPU memory hierarchy: kernel fusion, safe softmax, online softmax, and tiling."
 math: true

@@ -1,6 +1,6 @@
 ---
 title: "Why Transformers Need Positional Encoding"
-date: 2026-11-01
+date: 2026-09-05T19:28:00+08:00
 tags: ["transformer", "attention", "positional-encoding"]
 summary: "Attention can't tell \"dog bites man\" from \"man bites dog\". We try integer, fractional and binary encodings, see where each one breaks, and arrive at sines and cosines: a set of clock hands spinning at different speeds."
 math: true

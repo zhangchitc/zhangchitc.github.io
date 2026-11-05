@@ -1,6 +1,6 @@
 ---
 title: "How Mixture of Experts Scales Model Parameters"
-date: 2026-11-05T01:00:00+08:00
+date: 2026-08-30T16:32:00+08:00
 tags: ["mixture-of-experts", "moe", "ffn", "routing", "load-balancing"]
 summary: "Mixture of Experts lets a model's parameter count grow tens of times over while the compute per token barely moves. We build it up step by step: copying the FFN into experts, the router, dispatch and combine, top-K routing, and the auxiliary loss that keeps experts balanced."
 math: true

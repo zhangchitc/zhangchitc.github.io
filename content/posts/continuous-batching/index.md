@@ -1,6 +1,6 @@
 ---
 title: "How Continuous Batching Enables High-Concurrency LLM Inference"
-date: 2026-11-05T20:00:00+08:00
+date: 2026-10-09T16:23:00+08:00
 tags: ["continuous-batching", "inference", "kv-cache", "attention", "vllm", "sglang"]
 summary: "Naive batching holds every slot until the longest request finishes. Continuous batching swaps requests in and out at every forward step, which means packing prefill and decode tokens into one flat input and splitting attention back out per request with a cu_seqlens boundary table."
 math: false
