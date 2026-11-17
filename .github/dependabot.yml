@@ -1,0 +1,18 @@
+# Keep the SHA-pinned Actions in .github/workflows and the PaperMod submodule up to date.
+# hugo.yml only runs on pushes to gh-pages, so these PRs get no CI: read the diff, merging deploys.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      # one PR for all Action bumps instead of one per Action
+      actions:
+        patterns: ['*']
+
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      # theme updates change the rendered site; monthly keeps them reviewable
+      interval: monthly
