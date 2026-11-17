@@ -4,6 +4,9 @@ title = "Chi's Blog"
 theme = 'PaperMod'
 
 enableRobotsTXT = true
+# lastmod (sitemap, dateModified) comes from each post's last git commit, since `date` holds the episode's video date.
+# Needs full history: the workflow checks out with fetch-depth: 0.
+enableGitInfo = true
 
 [pagination]
   pagerSize = 10
