@@ -11,7 +11,11 @@
     chtml: { displayOverflow: 'scroll' }
   };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{{- /* Exact version, not @3: a new npm release can't change what runs here. integrity only covers this file;
+       MathJax loads [tex]/color and its fonts from the same versioned path, so the pinned version is what covers those.
+       When bumping, recompute: curl -s <url> | openssl dgst -sha384 -binary | openssl base64 -A */ -}}
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"
+  integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" crossorigin="anonymous"></script>
 <style>
   /* long display formulas scroll sideways on phones instead of overflowing the column */
   mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
